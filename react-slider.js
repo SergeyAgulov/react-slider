@@ -272,6 +272,12 @@
       return undoEnsureArray(this.state.value);
     },
 
+    setValue: function (num) {
+      return this.setState({
+        value : num
+      })
+    },
+
     _handleResize: function () {
       // setTimeout of 0 gives element enough time to have assumed its new size if it is being resized
       var resizeTimeout = window.setTimeout(function() {
