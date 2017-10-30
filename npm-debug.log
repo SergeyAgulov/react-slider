@@ -1,0 +1,120 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@4.1.2
+3 info using node@v7.7.3
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'D:\\mod-react-slider',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\onpoint\AppData\Roaming\npm-cache\mod-react-slider\0.9.1\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\onpoint\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle mod-react-slider@0.9.1~prepublish: mod-react-slider@0.9.1
+11 silly lifecycle mod-react-slider@0.9.1~prepublish: no script for prepublish, continuing
+12 info lifecycle mod-react-slider@0.9.1~prepare: mod-react-slider@0.9.1
+13 silly lifecycle mod-react-slider@0.9.1~prepare: no script for prepare, continuing
+14 verbose tar pack [ 'C:\\Users\\onpoint\\AppData\\Roaming\\npm-cache\\mod-react-slider\\0.9.1\\package.tgz',
+14 verbose tar pack   'D:\\mod-react-slider' ]
+15 verbose tarball C:\Users\onpoint\AppData\Roaming\npm-cache\mod-react-slider\0.9.1\package.tgz
+16 verbose folder D:\mod-react-slider
+17 verbose addLocalTarball adding from inside cache C:\Users\onpoint\AppData\Roaming\npm-cache\mod-react-slider\0.9.1\package.tgz
+18 verbose correctMkdir C:\Users\onpoint\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+19 silly cache afterAdd mod-react-slider@0.9.1
+20 verbose afterAdd C:\Users\onpoint\AppData\Roaming\npm-cache\mod-react-slider\0.9.1\package\package.json not in flight; writing
+21 verbose correctMkdir C:\Users\onpoint\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+22 verbose afterAdd C:\Users\onpoint\AppData\Roaming\npm-cache\mod-react-slider\0.9.1\package\package.json written
+23 silly publish { name: 'mod-react-slider',
+23 silly publish   version: '0.9.1',
+23 silly publish   description: 'Slider component for React',
+23 silly publish   main: 'react-slider.js',
+23 silly publish   keywords: [ 'react-component', 'react', 'slider', 'component' ],
+23 silly publish   author: { name: 'Michał Powaga', email: 'michalpowaga13@gmail.com' },
+23 silly publish   contributors:
+23 silly publish    [ { name: 'Florian Klampfer', email: 'f.klampfer@gmail.com' },
+23 silly publish      { name: 'James Brauman', email: 'james.22au@gmail.com' } ],
+23 silly publish   license: 'MIT',
+23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+23 silly publish   repository:
+23 silly publish    { type: 'git',
+23 silly publish      url: 'git+https://github.com/SergeyAgulov/react-slider.git' },
+23 silly publish   peerDependencies:
+23 silly publish    { react: '>=0.14 || ^15.4',
+23 silly publish      'prop-types': '^15.4',
+23 silly publish      'create-react-class': '^15.4' },
+23 silly publish   readme: '# React Slider\r\n\r\nCSS agnostic slider component for React.\r\n\r\nSee demo: [https://mpowaga.github.io/react-slider/](https://mpowaga.github.io/react-slider/)\r\n\r\n### Important Note\r\n\r\nThis is an alpha release. Use with caution and hope.\r\n\r\n### Installation\r\n\r\n```sh\r\nnpm install react-slider\r\n```\r\n\r\n### Overview\r\n\r\n#### Single slider:\r\n\r\nSimilar to `<input type="range" defaultValue={50} />`\r\n\r\n```javascript\r\nReact.render(<ReactSlider defaultValue={50} />, document.body);\r\n```\r\n\r\n#### Double slider (with bars between the handles):\r\n\r\n```javascript\r\nReact.render(<ReactSlider defaultValue={[0, 100]} withBars />, document.body);\r\n```\r\n\r\n#### Multi slider:\r\n\r\n```javascript\r\nReact.render(<ReactSlider defaultValue={[0, 33, 67, 100]} withBars />, document.body);\r\n```\r\n\r\n#### Provide custom handles:\r\n\r\n```javascript\r\nReact.render(\r\n  <ReactSlider withBars>\r\n    <div className="my-handle">1</div>\r\n    <div className="my-handle">2</div>\r\n    <div className="my-handle">3</div>\r\n  </ReactSlider>,\r\n  document.body\r\n);\r\n```\r\n\r\nNow you can style it as you want. Checkout the `index.html` example to see how.\r\n\r\n### Properties\r\n\r\n##### min {number} default: 0\r\n\r\nThe minimum value of the slider.\r\n\r\n##### max {number} default: 100\r\n\r\nThe maximum value of the slider.\r\n\r\n##### step {number} default: 1\r\n\r\nValue to be added or subtracted on each step the slider makes.\r\nMust be greater than zero.\r\n`max - min` should be evenly divisible by the step value.\r\n\r\n##### minDistance {number} default: 0\r\n\r\nThe minimal distance between any pair of handles.\r\nZero means they can sit on top of each other.\r\n\r\n##### defaultValue {oneOfType([number, arrayOf(number)])} default: 0\r\n\r\nDetermines the initial positions of the handles and the number of handles if the component has no children.\r\n\r\nIf a number is passed a slider with one handle will be rendered.\r\nIf an array is passed each value will determine the position of one handle.\r\nThe values in the array must be sorted.\r\nIf the component has children, the length of the array must match the number of children.\r\n\r\n##### value {oneOfType([number, arrayOf(number)])} default: 0\r\n\r\nLike `defaultValue` but for [controlled components](http://facebook.github.io/react/docs/forms.html#controlled-components).\r\n\r\n##### orientation {oneOf([\'horizontal\', \'vertical\'])} default: \'horizontal\'\r\n\r\nDetermines whether the slider moves horizontally (from left to right) or vertically (from top to bottom).\r\n\r\n##### className {string} default: \'slider\'\r\n\r\nThe css class set on the slider node.\r\n\r\n##### handleClassName {string} default: \'handle\'\r\n\r\nThe css class set on each handle node.\r\nIn addition each handle will receive a numbered css class of the form `${handleClassName}-${i}`,\r\ne.g. `handle-0`, `handle-1`, ...\r\n\r\n##### handleActiveClassName {string} default: \'active\'\r\n\r\nThe css class set on the handle that is currently being moved.\r\n\r\n##### withBars {boolean} default: false\r\n\r\nIf `true` bars between the handles will be rendered.\r\n\r\n##### barClassName {string} default: \'bar\'\r\n\r\nThe css class set on the bars between the handles.\r\nIn addition bar fragment will receive a numbered css class of the form `${barClassName}-${i}`,\r\ne.g. `bar-0`, `bar-1`, ...\r\n\r\n##### pearling {bool} default: false\r\n\r\nIf `true` the active handle will push other handles within the constraints of `min`, `max`, `step` and `minDistance`.\r\n\r\n##### disabled {bool} default: false\r\n\r\nIf `true` the handles can\'t be moved.\r\n\r\n##### snapDragDisabled {bool} default: false\r\n\r\nDisables handle move when clicking the slider bar.\r\n\r\n##### invert {bool} default: false\r\n\r\nInverts the slider.\r\n\r\n##### onBeforeChange {func}\r\n\r\nCallback called before starting to move a handle.\r\n\r\n##### onChange {func}\r\n\r\nCallback called on every value change.\r\n\r\n##### onAfterChange {func}\r\n\r\nCallback called only after moving a handle has ended or when a new value is set by clicking on the slider.\r\n\r\n##### onSliderClick {func}\r\n\r\nCallback called when the the slider is clicked (handle or bars). Receives the value at the clicked position as argument.\r\n\r\n### Methods\r\n\r\n##### getValue\r\n\r\nReturns the current value of the slider, which is a number in the case of a single slider,\r\nor an array of numbers in case of a multi slider.\r\n\r\n### License\r\n\r\nSee the [License](LICENSE) file.\r\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: '6af3cd0f4408f9c9a79324147b4b5da25eb22358',
+23 silly publish   bugs: { url: 'https://github.com/SergeyAgulov/react-slider/issues' },
+23 silly publish   homepage: 'https://github.com/SergeyAgulov/react-slider#readme',
+23 silly publish   _id: 'mod-react-slider@0.9.1',
+23 silly publish   _shasum: '6c4d18eb09e0a757705872bbc3618bc8efd8a5d8',
+23 silly publish   _from: '.' }
+24 info lifecycle mod-react-slider@0.9.1~prepublishOnly: mod-react-slider@0.9.1
+25 silly lifecycle mod-react-slider@0.9.1~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name mod-react-slider
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'mod-react-slider',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'mod-react-slider',
+30 silly mapToRegistry   name: 'mod-react-slider',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npmjs.org/mod-react-slider
+32 verbose publish registryBase https://registry.npmjs.org/
+33 silly publish uploading C:\Users\onpoint\AppData\Roaming\npm-cache\mod-react-slider\0.9.1\package.tgz
+34 verbose request uri https://registry.npmjs.org/mod-react-slider
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 19:56:54
+37 verbose request using bearer token for auth
+38 verbose request id 55f944c8ed872084
+39 http request PUT https://registry.npmjs.org/mod-react-slider
+40 http 403 https://registry.npmjs.org/mod-react-slider
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=300',
+41 verbose headers   'content-length': '91',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Mon, 30 Oct 2017 16:56:54 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-bma7035-BMA',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1509382613.310421,VS0,VE1062',
+41 verbose headers   vary: 'Accept-Encoding, Accept' }
+42 verbose request invalidating C:\Users\onpoint\AppData\Roaming\npm-cache\registry.npmjs.org\mod-react-slider on PUT
+43 error publish Failed PUT 403
+44 verbose stack Error: You cannot publish over the previously published version 0.9.1. : mod-react-slider
+44 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:304:12)
+44 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:292:14)
+44 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:212:14)
+44 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:186:22)
+44 verbose stack     at emitTwo (events.js:106:13)
+44 verbose stack     at Request.emit (events.js:194:7)
+44 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1081:10)
+44 verbose stack     at emitOne (events.js:96:13)
+44 verbose stack     at Request.emit (events.js:191:7)
+44 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1001:12)
+45 verbose statusCode 403
+46 verbose pkgid mod-react-slider
+47 verbose cwd D:\mod-react-slider
+48 error Windows_NT 10.0.15063
+49 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+50 error node v7.7.3
+51 error npm  v4.1.2
+52 error code E403
+53 error You cannot publish over the previously published version 0.9.1. : mod-react-slider
+54 error If you need help, you may report this error at:
+54 error     <https://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]
