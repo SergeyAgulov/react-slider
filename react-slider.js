@@ -274,7 +274,7 @@
 
     setValue: function (num) {
       return this.setState({
-        value : num
+        value : [num]
       })
     },
 
